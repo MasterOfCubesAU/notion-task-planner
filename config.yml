@@ -1,0 +1,32 @@
+DATABASE_ID: YOUR_DATABASE_ID
+APP_SECRET: YOUR_APP_SECRET
+
+ARCHIVE_LOCATION: "Archive"
+DAY_TO_RUN: "Monday"
+TIMEZONE: "Australia/Sydney"
+
+
+# Example Tasks:
+# - name: Test Task 1
+#     icon: "🎥"
+#     due: Sunday
+#   - name: Test Task 2
+#     icon: "🧪"
+#     due: Sunday
+#   - name: Test Task 3
+#     icon: "🔢"
+#     due: Wednesday 17:00
+#   - name: Test Task 4
+#     icon: null
+#     due: Wednesday
+
+TASKS:
+  - name: Test Task 1
+    icon: "🎥"
+    due: Thursday 09:00
+  - name: Test Task 2
+    icon: "🧪"
+    due: Friday
+  - name: Test Task 3
+    icon: "🔢"
+    due: Saturday 13:00
