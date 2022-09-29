@@ -82,9 +82,9 @@ export function createISO(dateSTR) {
             hour: time.get('hour'),
             minute: time.get('minute'),
             second: 0
-        }).add(10, 'hours').utc().toISOString()
+        }).add((moment(nextDueDate).utcOffset() / 60), 'hours').utc().toISOString()
     } else {
-        return moment(nextDueDate).startOf('day').add(10, 'hours').utc().toISOString().split("T")[0];
+        return moment(nextDueDate).startOf('day').add((moment(nextDueDate).utcOffset() / 60), 'hours').utc().toISOString().split("T")[0];
     }
 }
 
