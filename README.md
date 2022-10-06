@@ -17,7 +17,7 @@ Ideally, this tool should be run on a server. To update things manually, you may
 
 Otherwise, configure a cron job using `crontab -e` and append the below line into the file.
 ```
-@daily node ~/PATH_TO/notion-task-planner/index.js 
+@daily (cd PATH_TO/notion-task-planner && PATH_TO_NODE_JS/node index.js) 
 ```
 
 ## Configuration
