@@ -17,7 +17,7 @@ Ideally, this tool should be run on a server. To update things manually, you may
 
 Otherwise, configure a cron job using `crontab -e` and append the below line into the file.
 ```
-@daily cd ~/PATH_TO/notion-task-planner;node index.js 
+@daily (cd PATH_TO/notion-task-planner && PATH_TO_NODE_JS/node index.js) 
 ```
 
 ## Configuration
@@ -26,7 +26,7 @@ DATABASE_ID: This is the ID to your Notion database found in step 2 of the above
 APP_SECRET: This is the app secret generated as part of your Notion integration
 ```
 
-Tasks you would like to automate are listen in YAML format. The header `TASKS` defines all tasks. Each task is defined by a `name`, `icon` and `due` date.
+Tasks you would like to automate are listed in YAML format. The header `TASKS` defines all tasks. Each task is defined by a `name`, `icon` and `due` date.
 The only optional parameter is `icon`. To omit an icon, specify null. (see examples)
 
 The `due` date format is strict and follows the syntax
