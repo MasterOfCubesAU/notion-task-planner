@@ -21,7 +21,7 @@ if (moment().tz(CONFIG.TIMEZONE).format("dddd") == CONFIG.DAY_TO_RUN) {
         console.log(`Added task: ${task.name}, due on the next occurrence of ${task.due}`);
     }
 }
-clearCompletedTasks();
+await clearCompletedTasks();
 console.log(`Script finished executing.`);
 
 

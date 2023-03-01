@@ -103,10 +103,11 @@ export async function clearCompletedTasks() {
         },
     });
     for (const result of response.results) {
-        if (result.properties["Due Date"].date != null && moment.duration(moment().tz(CONFIG.TIMEZONE).diff(moment(result.properties["Due Date"].date.start))).asHours() >= 48) {
-            console.log(`Moving ${result.properties["Name"].title[0].plain_text} to ${CONFIG.ARCHIVE_LOCATION}`);
-            await movePageTo(result.id, CONFIG.ARCHIVE_LOCATION);
+        if (result.properties["Due Date"]?.date != null && moment.duration(moment().tz(CONFIG.TIMEZONE).diff(moment(result.properties["Due Date"].date.start))).asHours() < 48) {
+            continue;
         }
+        console.log(`Moving ${result.properties["Name"].title[0].plain_text} to ${CONFIG.ARCHIVE_LOCATION}`);
+        await movePageTo(result.id, CONFIG.ARCHIVE_LOCATION);
     }
 }
 
